@@ -3,6 +3,11 @@
                    
  #  **API Changelog**
 
+## June 7th , 2018 - Bets API 
+
+##### 1# <span style="background-color:green">FEATURE</span>  - New properties `price` and `finalPrice` for teaser bets  in the `/bets` response.
+The `price` will be populated for all teaser bets and will be the original price on the time of placement.
+The `finalPrice` will be populated only for `WON` bets and will indicate the price of bet resulting. It might be different from original price if one or more legs were pushed or canceled.
 
 ## June 6, 2018 - Lines API 
 
