@@ -100,8 +100,8 @@ Please also note that the `RUNNING` bet list does not return any live delay bets
 
 
 
-
-
+### How do I get access to the API as an affiliate?
+In order to access the API as an affiliate, you are required to send 5 new funded signups from the previous 3 months. If you are unable to refer 5 new funded signups from the previous 3-month period, access to the API may be rescinded.
 
 ### How often can I refresh your odds?
 
