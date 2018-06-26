@@ -88,9 +88,9 @@ Introduction of `parented` eliminates a need for rotation numbers.
 Please note that in the next version of `/fixtures`, `rotNum` property will be decommissioned.
 
 
-### When is event's period open for betting? 
+### When is market open for betting? 
 
-A market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
+A market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
 1. Period `status` = 1
 2. Market exists 
 3. Period has `cutoff` is in the future.
