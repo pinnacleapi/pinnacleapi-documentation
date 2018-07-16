@@ -4,12 +4,14 @@
 # FAQ
 ### How to find associated events?
 
-One can use `parentId` from the  [Get Fixtures](https://pinnacleapi.github.io/linesapi#operation/Fixtures_V1_Get) to group associated events to the "parent" event. Few facts that can help:
+One can use `parentId` from the  [Get Fixtures](https://pinnacleapi.github.io/linesapi#operation/Fixtures_V1_Get) to group associated events to the "parent" event. 
+
+A few facts that can help:
 
  - We have different events for pregame and live, that can be distinguished  by `liveStatus`.
- - In some cases we may have more than one live event for the same actual event, but we would never offer the same market on both events at the same time. 
+ - In some cases, we may have more than one live event for the same actual event, but we would never offer the same market on both events at the same time. 
  - Parent events are those that don't have `parentId`
- - Parent events are always pre-game ( `liveStatus`=0 or `liveStatus`=2), except in some case for MLB league and ESports, where live events  ( `liveStatus`=1) may be missing the  `parentid`
+ - Parent events are always pre-game ( `liveStatus`=0 or `liveStatus`=2), except in some cases for MLB league and ESports, where live events  ( `liveStatus`=1)  may be missing the  `parentid`
    
  
  Example:
@@ -82,13 +84,13 @@ One can use `parentId` from the  [Get Fixtures](https://pinnacleapi.github.io/li
 } 
 ```
 
-There is a pre-game parent event id 834342247, that has associated live event id 837721686, but also 2 corner events in different league, one live event (837721684), while the other one for pre-game (837721615)
+There is a pre-game parent event id 834342247, that has associated live event id 837721686, but also 2 corner events in different league - one live event (837721684), while the other one for pre-game (837721615)
 
 Introduction of `parented` eliminates a need for rotation numbers. 
-Please note that in the next version of `/fixtures`, `rotNum` property will be decommissioned.
+Please note that in the next version of `/fixtures`, the `rotNum` property will be decommissioned.
 
 
-### When is market open for betting? 
+### When is the market open for betting? 
 
 A market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
 1. Period `status` = 1
@@ -125,17 +127,17 @@ Example: When the `moneyline` market is not offered, the whole object will be mi
  
 
 
-Please note that for live events, odds change quite frequently as well as the period `status`, 
+Please note that for live events, odds change quite frequently as well as the period `status`. 
 Due to these frequent changes, it’s possible that you will be getting status `NOT_EXISTS` in the [Get Line](https://pinnacleapi.github.io/linesapi#operation/Line_Straight_V1_Get) response more often than for the pre-game events.
 
 
 
 ### How to place a bet on live events?
 
-Bets placed on events with live delay are treated differently than other bets. They get betId  assigned only once they are `ACCEPTED`.
+Bets placed on events with live delay are treated differently than other bets. They get  `betId`  assigned only once they are `ACCEPTED`.
 
 
-The only way to find out the `status`  of such a bet is by querying  Get Bets V2 by `uniqueRequestIds`:
+The only way to find out the  `status`  of such a bet is by querying  `Get Bets V2`  by `uniqueRequestIds`:
 
 `/v2/bets?uniqueRequestIds=86a90ab9-fca1-4703-a11c-ce329a85584e`
 
@@ -206,7 +208,7 @@ If the bet was `ACCEPTED`, the response includes the full bet details:
  
 ```
 
-We apply live delay of around 6 seconds, so the first call to Get Bets V2 should be 6 seconds after placing a bet. 
+We apply live delay of around 6 seconds, so the first call to  `Get Bets V2`  should be 6 seconds after placing a bet. 
 
 30 minutes after placing a bet, we will stop returning a response for provided uniqueRequestId. This is due to cache cleanup to maintain optimal performance.
 
@@ -216,6 +218,7 @@ Please also note that the `RUNNING` bet list does not return any live delay bets
 
 
 ### How do I get access to the API as an affiliate?
+
 In order to access the API as an affiliate, you are required to send 5 new funded signups from the previous 3 months. If you are unable to refer 5 new funded signups from the previous 3-month period, access to the API may be rescinded.
 
 ### How often can I refresh your odds?
@@ -224,13 +227,15 @@ Please check our fair use policy
 
 ### How do I make sure my links to www.pinnacle.com are tracking correctly?
 
-Please ensure that any links back to www.pinnacle.com are tagged with your tracking link. 
-Your tracking links are available from your affiliate account accessed at http://affiliates.pinnacle.com
+Please ensure that any links back to  www.pinnacle.com  are tagged with your tracking link. 
+Your tracking links are available from your affiliate account accessed at  http://affiliates.pinnacle.com
+
 A correct tracking link will have the format:   http://affiliates.pinnacle.com/processing/clickthrgh.asp?btag=a_numbersb_numbers
 
 ### Do you cache responses? For how long?
 
-Get Odds and Get Fixtures snapshot calls are cached for 60 seconds. Get Odds and Get Fixtures delta calls are not cached.
+`Get Odds`  and  `Get Fixtures`  snapshot calls are cached for 60 seconds.  
+`Get Odds`  and  `Get Fixtures`  delta calls are not cached.
 
 ### Can I link directly to the relevant odds pages on www.pinnacle.com (deep linking)?
 
@@ -238,7 +243,7 @@ Yes. To link directly to our odds pages, please contact customerservice@pinnacle
 
 ### How can I return only those sports and leagues which have data?
 
-Get Sports and Get Leagues operations have the `hasOfferings` property that indicates availability of the markets.
+`Get Sports`  and  `Get Leagues`  operations have the  `hasOfferings`  property that indicates availability of the markets.
 
 ### How do you calculate maximum bet amounts for currencies other than USD?
 
@@ -250,7 +255,7 @@ All times are GMT.
 
 ### How can I know if an event is deleted or settled?
 
-Please use Get Settled Fixtures to find out if the event's period was settled or if the event was deleted.
+Please use  `Get Settled Fixtures`  to find out if the event's period was settled or if the event was deleted.
 
 ### How to get odds changes?
 
@@ -261,7 +266,7 @@ Delta response has only changed periods, with all the markets that are currently
 
 Example:
 
-1) Snapshot call returns  period `number`=1 and period `number`=0 , and both of them have `moneyline` and `spreads` odds.
+1) Snapshot call returns period `number`=1 and period `number`=0 , and both of them have `moneyline` and `spreads` odds.
 2) Subsequent, Delta call returns just period 1 with the  `moneyline` and `totals`
     
  => This means that the period `number`=0 did not have any changes, and on the the period `number`=1 , the `spreads` is not offered anymore while the `totals` are offered now and the `moneyline` may have new prices
