@@ -58,7 +58,7 @@ All place bet requests support deduplication.
 
 # API Reference
 
-**[Pinnacle API Open API Specification](https://github.com/pinnacleapi/OpenAPI-Specification)** is hosted on github.
+**[Pinnacle API Open API Specification](https://github.com/pinnacleapi/OpenAPI-Specification)** is hosted on GitHub.
 
 The API reference documentation:
 
