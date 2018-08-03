@@ -3,6 +3,13 @@
                    
  #  **API Changelog**
 
+## July 17th , 2018 - Bets API 
+
+##### 1# <span style="background-color:green">FEATURE</span>  - New properties `TeaserId` and `TeaserGroupId` for teaser bets  in the `/bets` response.
+
+##### 2# <span style="background-color:green">FEATURE</span>  - Bet object added to the `bets/parlay` , `bets/teaser`  and `bets/special`  response.
+
+
 ## June 7th , 2018 - Bets API 
 
 ##### 1# <span style="background-color:green">FEATURE</span>  - New properties `price` and `finalPrice` for teaser bets  in the `/bets` response.
