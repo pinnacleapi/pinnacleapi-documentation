@@ -81,6 +81,8 @@ The API reference documentation:
 
 [Fair Use Policy](FairUsePolicy.md)
 
+# API Status
+You can follow [pinnacle status page](https://status.pinnacle.com/) and subscribe to get the notifications on API status.  
 
 # Libraries 
 #### R
