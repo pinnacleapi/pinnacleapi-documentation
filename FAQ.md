@@ -270,3 +270,7 @@ Example:
 2) Subsequent, Delta call returns just period 1 with the  `moneyline` and `totals`
     
  => This means that the period `number`=0 did not have any changes, and on the the period `number`=1 , the `spreads` is not offered anymore while the `totals` are offered now and the `moneyline` may have new prices
+ 
+ ### What TLS (Transport Layer Security) versions are supported?
+ 
+ To be compliant with the security requirements API supports only TLS 1.2 (preferably ) and TLS 1.1.
