@@ -35,5 +35,5 @@ The following limitations must be observed per sport:
  
 
 ### Best practice
+First issue a snaphost call (without the `since` parameter)  and continue with the delta cals (with the `since` parameter). This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster.
 
-Please use a delta /fixtures and /odds calls (with the since parameter) instead of a snapshot /fixtures and /odds calls (without since parameter).
