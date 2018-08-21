@@ -4,9 +4,9 @@
 # Fair Use Policy
 
 
-This API is protected by copyright laws and is provided free of charge only to our players, partners and affiliates.
+This API is protected by copyright laws and is provided only to our players, partners and affiliates.
 
-The use of this free resource is subject to our "Fair Use Policy" which is set out below.
+The use of this resource is subject to our "Fair Use Policy" which is set out below.
 
 Use of the API constitutes your agreement to this policy. You understand and agree that at our sole discretion, and without prior notice, we may block access to our site if we believe that your use of our site has violated or is inconsistent with this Fair Use Policy. 
 
