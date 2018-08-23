@@ -274,3 +274,8 @@ Example:
  ### What TLS (Transport Layer Security) versions are supported?
  
  To be compliant with the security requirements API supports only TLS 1.2 (preferably ) and TLS 1.1.
+ 
+ 
+ ### Why am I getting denied access on Esports?
+ Access to Esports is blocked and requires special authorization. To get the access please contact b2b@pinnacle.com and explain your business case. 
+ 
