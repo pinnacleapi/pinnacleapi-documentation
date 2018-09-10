@@ -279,3 +279,20 @@ Example:
  ### Why am I getting denied access on Esports?
  Access to Esports is blocked and requires special authorization. To get the access please contact b2b@pinnacle.com and explain your business case. 
  
+ ### Why am I getting `NOT_EXISTS` when calling `/line` operation?
+ 
+ These are possible reasons:
+
+1) Not sending correct  `periodNumber`, `eventid` , `leagueid` or `sportId`
+
+It is not a rare situation that the actual match is offered with more than one event.
+Different periods of the same actual match can be offered with the different events - period 0 can be  offered in `eventid` X and period 1 can be offered on `eventid` Y. It may also happen that for the same  `periodNumber` we offer `MONEYLINE` on `eventid`  X but `TOTAL` on `eventid`  Y.
+
+
+2) Period `cutoff` date time is in the past.
+
+3) Selection has no prices at the moment.
+
+4) Not sending correct `handicap`, `team` or `side`
+
+5) Period `status`=2 , offline
