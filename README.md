@@ -82,7 +82,7 @@ The API reference documentation:
 [Fair Use Policy](FairUsePolicy.md)
 
 # API Status
-You can follow [pinnacle status page](https://status.pinnacle.com/) and subscribe to get the notifications on API status.  
+You can follow [pinnacle status page](https://status.pinnacle.com/) and subscribe to get the notifications on API status. Notifications will be sent from noreply@mg.pinnacle.com, make sure you check your junk inbox.
 
 # Libraries 
 #### R
