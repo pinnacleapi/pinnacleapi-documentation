@@ -137,9 +137,9 @@ Due to these frequent changes, it’s possible that you will be getting status `
 Bets placed on events with live delay are treated differently than other bets. They get  `betId`  assigned only once they are `ACCEPTED`.
 
 
-The only way to find out the  `status`  of such a bet is by querying  `Get Bets V2`  by `uniqueRequestIds`:
+The only way to find out the  `status`  of such a bet is by querying  `/bets?uniqueRequestIds`:
 
-`/v2/bets?uniqueRequestIds=86a90ab9-fca1-4703-a11c-ce329a85584e`
+`/bets?uniqueRequestIds=86a90ab9-fca1-4703-a11c-ce329a85584e`
 
 As long as the bet is in `PENDING_ACCEPTANCE`, the response would be:
 
@@ -208,7 +208,7 @@ If the bet was `ACCEPTED`, the response includes the full bet details:
  
 ```
 
-We apply live delay of around 6 seconds, so the first call to  `Get Bets V2`  should be 6 seconds after placing a bet. 
+We apply live delay of around 6 seconds, so the first call to  `/bets`  should be 6 seconds after placing a bet. 
 
 30 minutes after placing a bet, we will stop returning a response for provided uniqueRequestId. This is due to cache cleanup to maintain optimal performance.
 
