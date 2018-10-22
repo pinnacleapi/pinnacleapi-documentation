@@ -2,6 +2,10 @@
 
                    
  #  **API Changelog**
+## October 17, 2018 - Lines API 
+
+##### 1# <span style="background-color:green">FEATURE</span>  - Added `handicap` parameter to  `line/special`.
+As contestant's handicap is a mutable property,  it may happened that `line/special` returns `status`:`SUCCESS`, but with the different `handicap` from the one that client had at the moment of calling the  `line/special`. Now one can specify `handicap` parameter in the request and if the contestant's handicap changed, it would return `status`:`NOT_EXISTS`. This way  `line/special` is more aligned to how `/line` works.
 
 
 ## July 17, 2018 - Bets API 
@@ -9,7 +13,6 @@
 ##### 1# <span style="background-color:green">FEATURE</span>  - New properties `TeaserId` and `TeaserGroupId` for teaser bets in the `/bets` response.
 
 ##### 2# <span style="background-color:green">FEATURE</span>  - Bet object added to the `bets/parlay` , `bets/teaser` and `bets/special` response.
-
 
 ## June 7, 2018 - Bets API 
 
