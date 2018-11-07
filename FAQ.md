@@ -11,7 +11,9 @@ A few facts that can help:
  - We have different events for pregame and live, that can be distinguished  by `liveStatus`.
  - In some cases, we may have more than one live event for the same actual event, but we would never offer the same market on both events at the same time. 
  - Parent events are those that don't have `parentId`and are pre-game events ( `liveStatus`=0 or `liveStatus`=2)
- - For some North American leagues and ESports `parentid` may not be set on the live event ( `liveStatus`=1)
+ - `parentId` may not be set rigt away when the event is created but it will be set before the event start trading.
+ - For some North American leagues and ESports `parentid` may not be set.
+ 
    
  
  Example:
