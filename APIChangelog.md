@@ -2,17 +2,22 @@
 
                    
  #  **API Changelog**
+## December 5, 2018 - Bets API 
+
+##### 1. <span style="background-color:green">FEATURE</span>  - New property `eventStartTime` for straight and special bets in the `/v3/bets` response.
+
+ 
 ## October 17, 2018 - Lines API 
 
-##### 1# <span style="background-color:green">FEATURE</span>  - Added `handicap` parameter to  `line/special`.
+##### 1. <span style="background-color:green">FEATURE</span>  - Added `handicap` parameter to  `line/special`.
 As contestant's handicap is a mutable property,  it may happened that `line/special` returns `status`:`SUCCESS`, but with the different `handicap` from the one that client had at the moment of calling the  `line/special`. Now one can specify `handicap` parameter in the request and if the contestant's handicap changed, it would return `status`:`NOT_EXISTS`. This way  `line/special` is more aligned to how `/line` works.
 
 
 ## July 17, 2018 - Bets API 
 
-##### 1# <span style="background-color:green">FEATURE</span>  - New properties `TeaserId` and `TeaserGroupId` for teaser bets in the `/bets` response.
+##### 1. <span style="background-color:green">FEATURE</span>  - New properties `TeaserId` and `TeaserGroupId` for teaser bets in the `/bets` response.
 
-##### 2# <span style="background-color:green">FEATURE</span>  - Bet object added to the `bets/parlay` , `bets/teaser` and `bets/special` response.
+##### 2. <span style="background-color:green">FEATURE</span>  - Bet object added to the `bets/parlay` , `bets/teaser` and `bets/special` response.
 
 ## June 7, 2018 - Bets API 
 
@@ -24,11 +29,11 @@ The `finalPrice` will be populated only for `WON` bets and will indicate the pri
 
 ## June 6, 2018 - Lines API 
 
-##### 1# <span style="background-color:green">FEATURE</span>  - New property `resultingUnit` in the `/fixtures` response.
+##### 1. <span style="background-color:green">FEATURE</span>  - New property `resultingUnit` in the `/fixtures` response.
 
 `resultingUnit` specifies based on what unit the event will be resulted, e.g. corners, bookings 
 
-##### 2# <span style="background-color:green">FEATURE</span>  - New property `status` in the `/odds` and `/odds/parlay/` response.
+##### 2. <span style="background-color:green">FEATURE</span>  - New property `status` in the `/odds` and `/odds/parlay/` response.
 
 `status` specifies whether the period is online or offline for betting 
 
@@ -36,14 +41,14 @@ To determine if an event is open for betting, previously, clients were supposed 
 Now you just need to check the `status` on the period.  
 This would allow clients to speed up the decision-making process as there is no more need to frequently check the `/fixtures`. 
 
-##### 3# <span style="background-color:green">FEATURE</span>  - New property `altHdp` in the `/odds/teaser` response.
+##### 3. <span style="background-color:green">FEATURE</span>  - New property `altHdp` in the `/odds/teaser` response.
 
 `altHdp` specifies whether the spread is offered with the alternative handicap. Events with alternative teaser handicaps may vary from the teaser definition in `/teaser/groups`
 
 
  ## March 6, 2018 - Lines API 
 
- ##### 1# <span style="background-color:green">FEATURE</span>  - New property `parentId ` in the `/fixtures` response.
+ ##### 1. <span style="background-color:green">FEATURE</span>  - New property `parentId ` in the `/fixtures` response.
 
  `parentId` can be used to group associated events to the "parent" pre-game event, like in the example below:
  ``` json
@@ -123,14 +128,14 @@ Please note that in the next version of `/fixtures`, the `rotNum` property will 
 
 ## January 4, 2018 - Lines API 
 
-##### <span style="background-color:red">BUGFIX</span> - 1# When contestant line is no longer offered, delta `/odds/special` calls  will return contestant line with null price
-##### <span style="background-color:red">BUGFIX</span> - 2# `line/special` incorrectly returns successful response for offline events and when `cutoff` is in the past
-##### <span style="background-color:red">BUGFIX</span> - 3# `line/special` returns {"status": "OFFLINE"} when a `price` is not set 
-##### <span style="background-color:red">BUGFIX</span> - 4# `/fixtures/settled` for tennis sometimes returns negative value for `team1ScoreSets` and `team2ScoreSets` fields
+##### 1. <span style="background-color:red">BUGFIX</span>  When contestant line is no longer offered, delta `/odds/special` calls  will return contestant line with null price
+##### 2. <span style="background-color:red">BUGFIX</span> `line/special` incorrectly returns successful response for offline events and when `cutoff` is in the past
+##### 3. <span style="background-color:red">BUGFIX</span>  `line/special` returns {"status": "OFFLINE"} when a `price` is not set 
+##### 4. <span style="background-color:red">BUGFIX</span> `/fixtures/settled` for tennis sometimes returns negative value for `team1ScoreSets` and `team2ScoreSets` fields
 
 
 ## December 21, 2017 - Lines API 
-##### <span style="background-color:red">BUGFIX</span> - 1# `v1/fixtures/special`  eventId filtering not working
+##### <span style="background-color:red">BUGFIX</span> - 1. `v1/fixtures/special`  eventId filtering not working
 
 
 ## October 11, 2017 - Bets API
@@ -145,12 +150,12 @@ Most important changes:
  
  For more details, see https://pinnacleapi.github.io/betsapi#operation/Bets_StraightV2
 
- ##### 1# <span style="background-color:green">FEATURE</span>  - New operation `/v2/bets/straight`
+ ##### 1. <span style="background-color:green">FEATURE</span>  - New operation `/v2/bets/straight`
 
- ##### 2# <span style="background-color:red">BUGFIX</span>  - Place bet operations return proper error in case of zero stake.
+ ##### 2. <span style="background-color:red">BUGFIX</span>  - Place bet operations return proper error in case of zero stake.
 
- ##### 3# <span style="background-color:orange">DECOMMISSIONING</span>  - `/v1/bets/place` will be decommissioned January 15, 2018. Please migrate to /v2/bets/straight 
+ ##### 3. <span style="background-color:orange">DECOMMISSIONING</span>  - `/v1/bets/place` will be decommissioned January 15, 2018. Please migrate to /v2/bets/straight 
  
- ##### 4# <span style="background-color:orange">DECOMMISSIONING</span>  - `/v1/bets` will be decommissioned January 15, 2018. Please migrate to /v2/bets 
+ ##### 4. <span style="background-color:orange">DECOMMISSIONING</span>  - `/v1/bets` will be decommissioned January 15, 2018. Please migrate to /v2/bets 
 
   
