@@ -300,7 +300,7 @@ Different periods of the same actual match can be offered with the different eve
 5) Period `status`=2 , offline
 
 ### How to detect deleted events?
-Sometimes an event can be deleted from the system, in such a case, since `/fixtures` would not return deleted events,  the event will be retured in `fixtures\settled` with the period `number`=0 and `status`=5 
+Sometimes an event can be deleted from the system, in such a case, since `/fixtures` would not return deleted events,  the event will be retured in `/fixtures/settled` with the period `number`=0 and `status`=5 
  
  ```json
   {
