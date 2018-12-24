@@ -298,3 +298,24 @@ Different periods of the same actual match can be offered with the different eve
 4) Not sending correct `handicap`, `team` or `side`
 
 5) Period `status`=2 , offline
+
+### How to detect deleted events?
+Sometimes an event can be deleted from the system, in such a case, since `/fixtures` would not return deleted events,  the event will be retured in `fixtures\settled` with the period `number`=0 and `status`=5 
+ 
+ ```json
+  {
+                    "id": 933912855,
+                    "periods": [
+                        {
+                            "number": 0,
+                            "status": 5,
+                            "settlementId": 3637379,
+                            "settledAt": "2018-12-24T02:12:06.707Z",
+                            "team1Score": 0,
+                            "team2Score": 0
+                        }
+                    ]
+                },
+ 
+ ```
+
