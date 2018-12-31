@@ -2,6 +2,13 @@
 
                    
  #  **API Changelog**
+ 
+  
+## December 18, 2018 - Lines API 
+
+##### 1. <span style="background-color:green">FEATURE</span>  - New property `liveStatus` in the `/v1/fixtures/special` response. 
+Pinnacle will start offering live betting on specials soon, firstly on Esports. This property was introduce so that clients can differentiate live from pregame specials. Please note that live delay will be applied to betting on live specials.  
+ 
 ## December 5, 2018 - Bets API 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New property `eventStartTime` for straight and special bets in the `/v3/bets` response.
