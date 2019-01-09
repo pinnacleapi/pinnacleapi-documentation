@@ -7,7 +7,11 @@
 ## December 18, 2018 - Lines API 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New property `liveStatus` in the `/v1/fixtures/special` response. 
-Pinnacle will start offering live betting on specials soon, firstly on Esports. This property was introduce so that clients can differentiate live from pregame specials. Please note that live delay will be applied to betting on live specials.  
+Pinnacle will start offering live betting on specials soon, firstly on Esports. This property was introduce so that clients can differentiate live from pregame specials. Please note that live delay will be applied to betting on live specials. 
+
+#### 2. <span style="background-color:green">IMPROVEMENT</span>  All live events must have `parentId`.
+When `parentId` was introduced we could not guarantee that all live events would have `parentId` set. In time we were able to consolidate the data and be able to guarantee that.
+
  
 ## December 5, 2018 - Bets API 
 
