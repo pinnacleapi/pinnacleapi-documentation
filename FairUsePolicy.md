@@ -27,12 +27,16 @@ You will not attempt, nor encourage others to:
 - use the API for commercial purposes without a written agreement with Pinnacle;
 - sell, rent, lease, sublicense, redistribute, or syndicate the API to any third party without prior written approval from Pinnacle.
 
+
+The following limitations must be observed for `/sports` call:
+-  Requests made for the `/sports`  must be restricted to once every 60 minute. List of sports does not change often. The count of active events is obsolete functionality, that will eventually be decommissioned.  
+
 The following limitations must be observed per sport:
-
-- Requests made for the /fixtures and /odds operation without the since parameter must be restricted to once every 60 seconds;
-- Requests made for the /fixtures and /odds operation with the since parameter must be restricted to once every 5 seconds.
-
+- Requests made for the `/fixtures` and `/odds` operation without the since parameter must be restricted to once every 60 seconds;
+- Requests made for the `/fixtures` and `/odds` operation with the since parameter must be restricted to once every 5 seconds.
+- Requests made for the `/leagues` must be restricted to once every 60 minute.
  
+
 
 ### Best practice
 First issue a snaphost call (without the `since` parameter)  and continue with the delta cals (with the `since` parameter). This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster.
