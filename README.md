@@ -84,6 +84,8 @@ The API reference documentation:
 # API Status
 You can follow [pinnacle status page](https://status.pinnacle.com/) and subscribe to get the notifications on API status. Notifications will be sent from noreply@mg.pinnacle.com, make sure you check your junk inbox.
 
+We are using Incapsula as content delivery provider for the API, you can follow their status [here](https://status.incapsula.com/).
+
 # Libraries 
 #### R
 Please use the [pinnacle.API](https://cran.r-project.org/web/packages/pinnacle.API/index.html) package available on CRAN.  (install.packages(“pinnacle.API”))
