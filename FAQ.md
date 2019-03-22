@@ -2,6 +2,15 @@
 
 
 # FAQ
+### Is home team always team1?
+No. 
+
+When placing a bet you must specify `team` , if it's team1/team2 that you are placing a bet on. In `/odds` and `/fixtures` operations,   teams are referred to as home/away. The mapping between home/away and  team1/team2 is specified in the `/leagues`  response in `homeTeamType` property.
+For more details on how to place a bet see [Getting Started](https://github.com/pinnacleapi/pinnacleapi-documentation/blob/master/GettingStarted.md)
+
+ 
+ 
+ 
 ### How to find associated events?
 
 One can use `parentId` from the  [Get Fixtures](https://pinnacleapi.github.io/linesapi#operation/Fixtures_V1_Get) to group associated events to the "parent" event. 
