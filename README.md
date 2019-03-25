@@ -4,6 +4,9 @@
 # Overview
 
 Pinnacle API is a RESTful service for betting all bet types on all sports. 
+```
+api.pinnacle.com
+```
 
 #### Authentication 
 
