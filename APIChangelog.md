@@ -3,7 +3,12 @@
                    
  #  **API Changelog**
  
-  
+## March 25, 2019 
+
+`api.pinnaclesports.com` will not be supported after April 15, 2019. Please use `api.pinnacle.com` instead. 
+
+
+ 
 ## December 18, 2018 - Lines API 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New property `liveStatus` in the `/v1/fixtures/special` response. 
