@@ -21,7 +21,7 @@ A few facts that can help:
 - Parent events don't have `parentId` and are pre-game events (`liveStatus`=0 or `liveStatus`=2)
 - In some cases, we may have more than one live event for the same actual event. 
 - Live events (`liveStatus`=1) will always have `parentid` from the moment of creation. 
-- Pre-game events will have `parentid` in most case. We take the best-effort apprach, but due to variouse sources of the data, atm it's not possible to gurantee that `parentid` will always be set. 
+- Pre-game events will have `parentid` in most case. We take the best-effort approach, but due to various sources of the data, atm it's not possible to guarantee that `parentid` will always be set. 
 - For pre-game events `parentId` may not be set right away when the event is created but it will be set before we price the event. 
 - Known issue: For some pre-game events in North American leagues and ESports `parentid` may not be set.
  
@@ -98,7 +98,7 @@ A few facts that can help:
 
 There is a pre-game parent event id 834342247, that has associated live event id 837721686, but also 2 corner events in different league - one live event (837721684), while the other one for pre-game (837721615)
 
-Introduction of `parented` eliminates a need for rotation numbers. 
+Introduction of `parentid` eliminates a need for rotation numbers. 
 Please note that in the next version of `/fixtures`, the `rotNum` property will be decommissioned.
 
 
@@ -279,9 +279,9 @@ Delta response has only changed periods, with all the markets that are currently
 Example:
 
 1) Snapshot call returns period `number`=1 and period `number`=0 , and both of them have `moneyline` and `spreads` odds.
-2) Subsequent, Delta call returns just period 1 with the  `moneyline` and `totals`
+2) Subsequent, Delta call returns just period 1 with the `moneyline` and `totals`
     
- => This means that the period `number`=0 did not have any changes, and on the the period `number`=1 , the `spreads` is not offered anymore while the `totals` are offered now and the `moneyline` may have new prices
+ => This means that the period `number`=0 did not have any changes, and on the period `number`=1 , the `spreads` is not offered anymore while the `totals` are offered now and the `moneyline` may have new prices
  
  ### What TLS (Transport Layer Security) versions are supported?
  
@@ -310,7 +310,7 @@ Different periods of the same actual match can be offered with the different eve
 5) Period `status`=2 , offline
 
 ### How to detect deleted events?
-Sometimes an event can be deleted from the system, in such a case, since `/fixtures` would not return deleted events,  the event will be retured in `/fixtures/settled` with the period `number`=0 and `status`=5 
+Sometimes an event can be deleted from the system, in such a case, since `/fixtures` would not return deleted events,  the event will be returned in `/fixtures/settled` with the period `number`=0 and `status`=5 
  
  ```json
   {
