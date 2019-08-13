@@ -269,6 +269,7 @@ All times are GMT.
 
 Please use  `Get Settled Fixtures`  to find out if the event's period was settled or if the event was deleted.
 
+
 ### How to get odds changes?
 
 1) Call the snapshot /odds (without the since parameter) - this would return cached odds snapshot
@@ -328,4 +329,11 @@ Sometimes an event can be deleted from the system, in such a case, since `/fixtu
                 },
  
  ```
+### How to handle error on placing a bet?
+If you get any unexpected error upon calling a place bet operation,  that does NOT mean that your bet was not placed.
+You must check if the bet was placed by calling the [`bets?uniqueRequestIds={comma separated uniqueRequestIds}`](https://pinnacleapi.github.io/betsapi#operation/Bets_GetBetsByTypeV3).
+If you have a retry logic, make sure you reuse the same uniqueRequestId in the place bet request. 
+For more details on how uniqueRequestId works, please check [Deduplication](https://github.com/pinnacleapi/pinnacleapi-documentation#deduplication).
+
+
 
