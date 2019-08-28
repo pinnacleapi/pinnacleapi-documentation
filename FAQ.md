@@ -337,3 +337,46 @@ For more details on how uniqueRequestId works, please check [Deduplication](http
 
 ### How to handle RESUBMIT_REQUEST error when placing a bet?
 This error signals it was not possible to process place bet request. It is mostly caused by our system being in the middle of processing a price change. Error is more common in Live betting compared to the prematch. Client can retry and send the same bet request again but after getting this error the first time, a retry would be often rejected due to a price change.
+
+
+
+
+###  How to calculate max risk from the max volume limits in `/odds`?
+
+`/odds` operation returns max volume limits.
+
+To calculate the max risk from the max volume , for a price in decimal odds format, you can use this formula:
+
+If  price  > 2  then:  
+```
+maxRisk = maxVolume  
+```
+, otherwise when price  < 2: 
+```
+ maxRisk = maxVolume/(price - 1)
+
+```
+
+
+
+##### Example:
+
+When `/odds` return this moneyline offering
+```json 
+{
+                            "lineId": 242220498,
+                            "number": 1,
+                            "cutoff": "2019-08-30T21:00:00Z",
+                            "maxMoneyline": 250,
+                            "status": 1,
+                            "moneyline": {
+                                "home": 1.819,
+                                "away": 2.03
+                            }
+                        }
+
+```
+Max volume is 250.
+Home team max risk is 305. 
+Away team max risk is 250.
+
