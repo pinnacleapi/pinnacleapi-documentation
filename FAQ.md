@@ -336,7 +336,7 @@ If you have a retry logic, make sure you reuse the same uniqueRequestId in the p
 For more details on how uniqueRequestId works, please check [Deduplication](https://github.com/pinnacleapi/pinnacleapi-documentation#deduplication).
 
 ### How to handle RESUBMIT_REQUEST error when placing a bet?
-This error signals it was not possible to process place bet request. It is mostly caused by our system being in the middle of processing a price change. Error is more common in Live betting compared to the prematch. Client can retry and send the same bet request again but after getting this error the first time, a retry would be often rejected due to a price change.
+This error can occur when trading logic is updating internal parameters. It's not an error on your side , neither is it an API error. Please continue to resubmit your wager until you receive a different response.
 
 
 
