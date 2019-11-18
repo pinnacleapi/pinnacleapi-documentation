@@ -101,6 +101,24 @@ There is a pre-game parent event id 834342247, that has associated live event id
 Introduction of `parentid` eliminates a need for rotation numbers. 
 Please note that in the next version of `/fixtures`, the `rotNum` property will be decommissioned.
 
+### How to find props and futures markets?
+
+Props and futures market are offered as specials, you would need to call `/fixtures/special` and `odds/special` to get the markets.
+Special has `event` object that specifies the details of the associated event that you can use to link back to the event from the `/fixtures` endpoint.
+
+```json
+  {
+                    "id": 1065232780,
+                    ...
+                    "event": {
+                        "id": 1051780418,
+                        "periodNumber": 1,
+                        "home": "Malta",
+                        "away": "Norway"
+                    },
+                    ...
+                },
+```
 
 ### When is the market open for betting? 
 
