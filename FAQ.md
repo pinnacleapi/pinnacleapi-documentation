@@ -124,7 +124,7 @@ Special has `event` object that specifies the details of the associated event th
 
 A market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
 1. Period `status` = 1
-2. Market exists 
+2. Market is priced.
 3. Period has `cutoff` is in the future.
 
 
