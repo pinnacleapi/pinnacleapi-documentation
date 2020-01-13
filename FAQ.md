@@ -122,7 +122,7 @@ Special has `event` object that specifies the details of the associated event th
 
 ### When is the market open for betting? 
 
-A market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
+A straight market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
 1. Period `status` = 1
 2. Market is priced.
 3. Period has `cutoff` is in the future.
@@ -160,8 +160,12 @@ Example: When the `moneyline` market is not offered, the whole object will be mi
 Please note that for live events, odds change quite frequently as well as the period `status`. 
 Due to these frequent changes, it’s possible that you will be getting status `NOT_EXISTS` in the [Get Line](https://pinnacleapi.github.io/linesapi#operation/Line_Straight_V1_Get) response more often than for the pre-game events.
 
+A special market is open for betting if:
 
-
+1. Special event `status` is `"O"` or `"I"`. See [Get Special Fixtures](https://pinnacleapi.github.io/linesapi#operation/Fixtures_Special_V1_Get).
+2. Market is priced. See [Get Special Odds](https://pinnacleapi.github.io/linesapi#operation/Odds_Special_V1_Get) .
+3. Special event `cutoff` is in the future. See [Get Special Fixtures](https://pinnacleapi.github.io/linesapi#operation/Fixtures_Special_V1_Get).
+ 
 ### How to place a bet on live events?
 
 Bets placed on events with live delay are treated differently than other bets. They get  `betId`  assigned only once they are `ACCEPTED`.
