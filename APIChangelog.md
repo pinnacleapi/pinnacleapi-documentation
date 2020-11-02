@@ -3,6 +3,11 @@
                    
  #  **API Changelog**
  
+## November 2, 2020 
+
+##### 1. <span style="background-color:green">FEATURE</span>  - New properties `betStatus2` and `legBetStatus2` in the `/v3/bets` response. 
+New properties are added to the straight and the parlay bets to support Asian handicap half won and half lost settlement.
+
 ## March 25, 2019 
 
 `api.pinnaclesports.com` will not be supported after April 15, 2019. Please use `api.pinnacle.com` instead. 
