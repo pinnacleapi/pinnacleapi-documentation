@@ -3,6 +3,11 @@
                    
  #  **API Changelog**
  
+ 
+## November 16, 2020 
+
+##### 1. <span style="background-color:green">FEATURE</span>  - New property `contestants` in the `/v1/fixtures/special/settled` response, to return individual contestant outcomes.
+ 
 ## November 2, 2020 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New properties `betStatus2` and `legBetStatus2` in the `/v3/bets` response. 
