@@ -3,6 +3,12 @@
                    
  #  **API Changelog**
  
+## February  18, 2021 
+##### 1. <span style="background-color:green">FEATURE</span>  - Added new property `max` in the `/v1/odds` response, to return alternate market specific limits. 
+##### 2. <span style="background-color:green">FEATURE</span>  - Added new endpoint `/v2/line/parlay`  to support round robin limits.
+##### 3. <span style="background-color:red"> DEPRECATED</span>  -  `/v1/line/parlay`  and  `/v1/bets/parlay`  are deprecated, please switch to `/v2/line/parlay`  and `/v2/bets/parlay`  by March 18th 2021. Transition to `/v2/bets/parlay` version  is seamless, there are no data contract changes. Transition to `/v2/line/parlay` version requires small changes for parlay bets and a bit more for round robin bets .
+
+
  
 ## November 16, 2020 
 
