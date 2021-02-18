@@ -402,3 +402,19 @@ Max volume is 250.
 Home team max risk is 305. 
 Away team max risk is 250.
 
+### How to calculate round robin max stake?
+ 
+If a client would need to know the maximum round robin stake, one would need to calculate it based on selected  round robin options.
+In /v2/line/parlay endpoint we return the needed parameters. 
+ 
+4 steps to calculate it:
+ 
+1) maxRiskStakeBasedOnMaxTotalRisk=   `maxRoundRobinTotalRisk`/SUM (`numberOfBets`), where 
+SUM (`numberOfBets`) is sum of numberOfBets for all selected round robin options.
+
+2) maxRiskStakeBasedOnMaxTotalWin = `maxRoundRobinTotalWin` / SUM (`unroundedDecimalOdds`- 1) , where SUM (`unroundedDecimalOdds`- 1) is sum of  unroundedDecimalOdds-1 for all selected round robin options.
+
+3) maxRoundRobinRiskStake = Min(maxRiskStakeBasedOnMaxTotalRisk,  maxRiskStakeBasedOnMaxTotalWin) 
+
+4) **maxRoundRobinRiskStake**  = round(maxRoundRobinRiskStake)  ,  round to 2 decimal place, away from zero.
+
