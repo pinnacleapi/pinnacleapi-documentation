@@ -38,6 +38,7 @@ The following limitations must be observed per sport:
  
 
 
-### Best practice
-First issue a snaphost call (without the `since` parameter)  and continue with the delta cals (with the `since` parameter). This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster.
-
+### Rules 
+- First issue a snaphost call (without the `since` parameter)  and continue with the delta cals (with the `since` parameter). This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster.
+- `since` parameter must not set to 0 or 1, it must always be set with the `last` value the previous call response.
+- Client must not call `/odds` or `/fixture` endpoint for each league or fixture in the loop.  If client is interested in certain leagues only,  `leagueIds` parameter must be set with all the league identifiers.
