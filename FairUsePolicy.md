@@ -41,6 +41,6 @@ You will not attempt, nor encourage others to:
 
 
 5. The following limitations must be observed per sport:
-- Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 60 seconds;
-- Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 5 seconds.
+- Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 60 seconds, regardless of the `leagueIds`, `eventIds` or `islive` paramaters.
+- Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 5 seconds, regardless of the `leagueIds`, `eventIds` or `islive` paramaters.
 - Calls to `/leagues` must be restricted to once every 60 minute.
