@@ -27,18 +27,20 @@ You will not attempt, nor encourage others to:
 - use the API for commercial purposes without a written agreement with Pinnacle;
 - sell, rent, lease, sublicense, redistribute, or syndicate the API to any third party without prior written approval from Pinnacle.
 
+### Rules 
+ 
+1. Delta and snapshot calls are supported in `/fixtures` and `/odds` endpoints.  Delta calls return changes since the provided  `since` value . For delta calls `since` parameter must not set to 0 or 1, it must always be set with the `last` value the previous call response. Snapshot calls return the current state and `since` parameter must not be provided at all.
 
-The following limitations must be observed for `/sports` call:
+2. Always first issue a snapshot call and continue with the delta calls. This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster. 
+
+3. Client must not call `/odds` or `/fixture` endpoint for each league or fixture in the loop.  If client is interested in certain leagues only,  `leagueIds` parameter must be set with all the league identifiers.
+
+
+4. The following limitations must be observed for `/sports` call:
 -  Requests made for the `/sports`  must be restricted to once every 60 minute. List of sports does not change often. The count of active events is obsolete functionality, that will eventually be decommissioned.  
 
-The following limitations must be observed per sport:
-- Requests made for the `/fixtures` and `/odds` operation without the since parameter must be restricted to once every 60 seconds;
-- Requests made for the `/fixtures` and `/odds` operation with the since parameter must be restricted to once every 5 seconds.
-- Requests made for the `/leagues` must be restricted to once every 60 minute.
- 
 
-
-### Rules 
-- First issue a snaphost call (without the `since` parameter)  and continue with the delta cals (with the `since` parameter). This would result in faster response time and smaller response payload, as a result, client will have get the odds/fixtures updates faster.
-- `since` parameter must not set to 0 or 1, it must always be set with the `last` value the previous call response.
-- Client must not call `/odds` or `/fixture` endpoint for each league or fixture in the loop.  If client is interested in certain leagues only,  `leagueIds` parameter must be set with all the league identifiers.
+5. The following limitations must be observed per sport:
+- Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 60 seconds;
+- Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 5 seconds.
+- Calls to `/leagues` must be restricted to once every 60 minute.
