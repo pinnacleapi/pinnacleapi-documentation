@@ -3,6 +3,9 @@
                    
  #  **API Changelog**
  
+## February  9, 2022  - Lines API 
+##### 1. <span style="background-color:green">FEATURE</span>  - New properties `moneylineUpdatedAt`, `spreadUpdatedAt`, `totalUpdatedAt` and `teamTotalUpdatedAt`  in the `/v1/odds` response.
+ 
 ## February  18, 2021 
 ##### 1. <span style="background-color:green">FEATURE</span>  - Added new property `max` in the `/v1/odds` response, to return alternate market specific limits. 
 ##### 2. <span style="background-color:green">FEATURE</span>  - Added new endpoint `/v2/line/parlay`  to support round robin limits.
