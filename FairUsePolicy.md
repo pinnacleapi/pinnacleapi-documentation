@@ -44,3 +44,5 @@ You will not attempt, nor encourage others to:
 - Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 60 seconds, regardless of the `leagueIds`, `eventIds` or `islive` paramaters.
 - Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 5 seconds, regardless of the `leagueIds`, `eventIds` or `islive` paramaters.
 - Calls to `/leagues` must be restricted to once every 60 minute.
+
+6. Client must not call `/line` endpoint in the loop. The purpose of this endpoint is to check the price prior the bet placing.
