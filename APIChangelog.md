@@ -3,6 +3,12 @@
                    
  #  **API Changelog**
  
+## April  18, 2022  
+   
+
+New  call [rate limit](https://github.com/pinnacleapi/pinnacleapi-documentation#rate-limits) logic. 
+
+ 
 ## February  9, 2022  - Lines API 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New properties `moneylineUpdatedAt`, `spreadUpdatedAt`, `totalUpdatedAt` and `teamTotalUpdatedAt`  in the `/v1/odds` and `/v1/odds/teaser` response.
  
