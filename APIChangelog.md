@@ -3,6 +3,10 @@
                    
  #  **API Changelog**
  
+ 
+## May  31, 2022  - Bets API 
+##### 1. <span style="background-color:green">FEATURE</span>  - New property `resultingUnit`  in   `/bets` response.
+  
 ## April  18, 2022  
    
 
