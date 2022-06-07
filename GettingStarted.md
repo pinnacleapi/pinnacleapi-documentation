@@ -2,28 +2,29 @@
 
 # Getting Started
 
-##### Step 1 - Sign Up
+##### Step 1 - Get Approval to Access the API
 
-To get started, you would need to create an account.
-
-Please note that in order to access Pinnacle API, the account must be funded.
+Please note that Pinnacle API is not available to all customers. To request the access please contact [Pinnacle Solution](
+https://www.pinnaclesolution.com/en/contact-us).
 
 
 ##### Step 2 - Get a List of Offered Sports and Leagues
 
-You would need to get the list of sports from Get Sports operation. If you are interested in particular leagues, you can get all sport leagues by calling Get Leagues operation.
+You would need to get the list of sports from the Get Sports operation. If you are interested in particular leagues, you can get all sports leagues by calling the  Get Leagues operation.
 
 ##### Step 3 - Place Bet 
 
-To place a bet, please check the sections How to place a straight bet and How to place a parlay bet
+To place a bet, please check the below section [How to place a bet](#How_to_Place_a_Bet).
 
 ##### Step 4 - Get Bets
 
-To check the status of the placed bet, you need to call Get Bets operation. The recommended way is to use betId.
+To check the status of the placed bet, you need to call Get Bets operation. The recommended way is to use `betIds` query parameter.
 
 
 
-### How to Place a Straight Bet 
+## How to Place a Bet
+
+#### Straight Bet 
 
 #####  Step 1 - Call Get Fixtures operation 
 
@@ -35,14 +36,13 @@ This will return the list of events that are currently offered. To get updates, 
 This will return the list of odds that are currently offered. To get updates, use delta requests (with since parameter)
 
 
-##### Step 3 - Get Line (optional)
+##### Step 3 (Optional) - Get Line 
 
-Call Get Line operation if you need exact limits or if you are interested in a specific line. Please note that the limits in the Get Odds response are general limits.
-
+Call Get Line operation if you need exact limits or if you are interested in a specific line. Please note that the limits in the Get Odds response are general.
 
 ##### Step 4 - Place Bet
 
-To place a bet, you need to call Place Bet operation.
+To place a bet you need to call Place Bet operation.
 
 
 
@@ -92,11 +92,12 @@ Table shows how to do mapping of Get Odds operation response to Place Bet and Ge
 </table>
 
 **IMPORTANT**: 
-Maker sure you use both the `lineId` and `altLineId` from the Get Line or Get Odds response when placing a bet.
+Make sure you use both the `lineId` and `altLineId` from the Get Line or Get Odds response when placing a bet.
 If you the price was for alternate line and you omit to set the `altLineId` parameter in the place bet request, the bet will be placed on the main line.
 
 
-### How to Place a Parlay Bet 
+
+#### Parlay Bet 
 
 ##### Step 1 – Call Get Fixtures operation
 
@@ -115,10 +116,10 @@ For each event and bet type you want to bet on, construct a Leg object for Get P
 
 ##### Step 4 – Call Place Parlay Bet
 
-Construct a list of legs using lineId values from Get Parlay Lines response and specify roundRobbinOptions out of those retuned in Get Parlay Lines response.
+Construct a list of legs using lineId values from Get Parlay Lines response and specify roundRobbinOptions out of those returned in Get Parlay Lines response.
 
 
-### How to Place a Teaser Bet
+#### Teaser Bet
 
 ##### Step 1 – Call Get Teaser Groups operation
 
@@ -128,7 +129,7 @@ This will return the list of teasers by group containing all the details for eac
 
 This will return the list of adjusted points that are currently offered for the given teaser.
  
-##### Step 3 – Optionally, call Get Teaser Lines operation
+##### Step 3 (Optional) – Call Get Teaser Lines operation
 
 Prior to submitting a teaser bet you can call this endpoint to validate your proposed bet, calculate the effective minimum/maximum win/risk bet limits, as well as get the price you will receive for the bet without actually placing a bet.
 
@@ -136,7 +137,7 @@ Prior to submitting a teaser bet you can call this endpoint to validate your pro
 
 Using the information obtained from the previous steps, build and place your bet.
 
-### How to Place a Special Bet
+#### Special Bet
 
 ##### Step 1 – Call Get Special Fixtures operation
 
@@ -146,10 +147,12 @@ This will return the list of specials that are currently offered. To get updates
 
 This will return the list of special odds that are currently offered. To get updates use delta requests (with since parameter)
  
-##### Step 3 – Optionally; call Get Special Lines operation
+##### Step 3 (Optional) - Call Get Special Lines operation
 
 Prior to submitting a special bet, you can call this endpoint to validate your proposed bet, calculate the effective minimum/maximum win/risk bet limits, as well as get the price you will receive for the bet without actually placing a bet.
 
 ##### Step 4 – Call Place Special Bet operation
 
 Using the information obtained from the previous steps, build and place your bet.
+
+

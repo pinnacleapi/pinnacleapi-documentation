@@ -8,6 +8,11 @@ Pinnacle API is a RESTful service for betting all bet types on all sports.
 api.pinnacle.com
 ```
 
+
+Please note that in order to access Pinnacle API you must contact [Pinnacle Solution](
+https://www.pinnaclesolution.com/en/contact-us) for the approval.
+
+
 #### Authentication 
 
 
@@ -61,7 +66,7 @@ All place bet requests support deduplication.
 
 
 
-# API Reference
+## API Reference
 
 **[Pinnacle API Open API Specification](https://github.com/pinnacleapi/OpenAPI-Specification)** is hosted on GitHub.
 
@@ -75,7 +80,7 @@ The API reference documentation:
 
 
 
-## Rate Limits
+#### Rate Limits
 
 
 To enforce the [Fair Use Policy](FairUsePolicy.md#rules) and ensure stable service to all the clients we have API rate limits in place, a number of API calls clients can make within a given time period.
@@ -115,8 +120,9 @@ Examples of snapshot calls that are counted towards the same sport-endpoint call
 * /v1/fixtures?sportid=29&eventIds=1550526772,1550667755&currencycode=EUR
 
  
-
-
+#### R Library
+Please use the [pinnacle.API](https://cran.r-project.org/web/packages/pinnacle.API/index.html) package available on CRAN.  (install.packages(“pinnacle.API”))
+The source code can be found [here](https://github.com/marcoblume/pinnacle.API).
 
 
 
@@ -135,10 +141,6 @@ You can follow [pinnacle status page](https://status.pinnacle.com/) and subscrib
 
 We are using Cloudflare as content delivery provider for the API, you can follow their status [here](https://www.cloudflarestatus.com/).
 
-# Libraries 
-#### R
-Please use the [pinnacle.API](https://cran.r-project.org/web/packages/pinnacle.API/index.html) package available on CRAN.  (install.packages(“pinnacle.API”))
-The source code can be found [here](https://github.com/marcoblume/pinnacle.API).
 
 # Disclaimer
 
