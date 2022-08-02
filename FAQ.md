@@ -17,14 +17,11 @@ One can use `parentId` from the  [Get Fixtures](https://pinnacleapi.github.io/li
 
 A few facts that can help:
 
-- We have different events for pregame and live, that can be distinguished  by `liveStatus`.
-- Parent events don't have `parentId` and are pre-game events (`liveStatus`=0 or `liveStatus`=2)
-- In some cases, we may have more than one live event for the same actual event. 
-- Live events (`liveStatus`=1) will always have `parentid` from the moment of creation. 
-- Pre-game events will have `parentid` in most case. We take the best-effort approach, but due to various sources of the data, atm it's not possible to guarantee that `parentid` will always be set. 
-- For pre-game events `parentId` may not be set right away when the event is created but it will be set before we price the event. 
-- Known issue: For some pre-game events in North American leagues and ESports `parentid` may not be set.
- 
+- We have different events for pregame and live, that can be distinguished by liveStatus.
+- Parent events are pre-game events (liveStatus=0 or liveStatus=2) and don't have parentId set.
+- Live events (liveStatus=1) will always have parentId set.
+- In some cases, we may have more than one event associated with the parent event. This happens if the events have different resultingUnit or if multiple events are required in order to offer alternative odds.
+
  
  Example:
 
