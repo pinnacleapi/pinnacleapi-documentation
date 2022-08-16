@@ -3,6 +3,11 @@
                    
  #  **API Changelog**
  
+ Added period level score and red cards
+ 
+## August  16, 2022  - Lines API 
+##### 1. <span style="background-color:green">FEATURE</span>  - New period level properties for score and red cards  in  `/odds` response.  Supported only for Match (number=0) and Extra Time (number=3). 
+  
  
 ## May  31, 2022  - Bets API 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New property `resultingUnit`  in   `/bets` response.
