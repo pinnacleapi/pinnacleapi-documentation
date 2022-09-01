@@ -98,6 +98,11 @@ There is a pre-game parent event id 834342247, that has associated live event id
 Introduction of `parentid` eliminates a need for rotation numbers. 
 Please note that in the next version of `/fixtures`, the `rotNum` property will be decommissioned.
 
+
+###  How to handle duplicated parent events?
+If a parent event was created with the wrong information in the immutable properties  (participant names, league , ...), a new parent event will be created with the correct information.  
+When the client detects a duplicate, by default can always use the event with the greater identifier value and in addition, monitor settled fixtures endpoint and discard the one that’s deleted or settled.
+
 ### How to find props and futures markets?
 
 Props and futures market are offered as specials, you would need to call `/fixtures/special` and `odds/special` to get the markets.
