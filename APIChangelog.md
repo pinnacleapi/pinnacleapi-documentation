@@ -2,8 +2,14 @@
 
                    
  #  **API Changelog**
- 
- Added period level score and red cards
+
+## September  12, 2022  - Lines API 
+
+#### 1. <span style="background-color:green">IMPROVEMENT</span> -  Tennis events trading.
+
+Currently, all Tennis markets are offered with the `Regular`  `resultingUnit`,  except for the Set Handicaps markets which have `Sets` `resultingUnit`. The Set Handicaps markets events have the resulting unit and the handicap points in the team names and are offered as Moneylines. 
+Future tennis events will start using proper `resultingUnit`  and the Sets Handicaps markets will have handicap points removed from the team names and offered as spread markets.
+
  
 ## August  16, 2022  - Lines API 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New period level properties for score and red cards  in  `/odds` response.  Supported only for Match (number=0) and Extra Time (number=3). 
