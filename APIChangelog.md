@@ -3,6 +3,15 @@
                    
  #  **API Changelog**
 
+## October 7, 2022  - Lines API 
+
+#### 1. <span style="background-color:green">DEPRECATED</span> -  Properties team1ScoreSets/team2ScoreSets are deprecated.
+
+As a part of the tennis changes from September 12, 2022, properties `team1ScoreSets` and`team2ScoreSets` in `/fixtures/settled` endpoint are deprecated. 
+
+The score for tennis matches works the same as for other sports, properties `team1Score` and`team2Score` show the score depending on the `resultingUnit` (`Games` or `Sets`) coming from the `/fixtures` endpoint.
+
+
 ## September  12, 2022  - Lines API 
 
 #### 1. <span style="background-color:green">IMPROVEMENT</span> -  Tennis events trading.
