@@ -16,21 +16,20 @@ The score for tennis matches works the same as for other sports, properties `tea
 
 #### 1. <span style="background-color:green">IMPROVEMENT</span> -  Tennis events trading.
 
-Old Tennis markets are offered with the `Regular`  `resultingUnit`,  except for the Set Handicaps markets which have `Sets` `resultingUnit`. The Set Handicaps markets events had the resulting unit and the handicap points in the team names and are offered as Moneylines. 
+Old Tennis markets are offered with the `Regular` `resultingUnit`, except for the Set Handicaps markets which have `Sets` `resultingUnit`. The Set Handicaps markets events had the resulting unit and the handicap points in the team names and are offered as Moneylines. 
 The rest of the markets are not explicit as to whether or not they use the number of Sets or Games won by each player to determine their result.
-New tennis events will start using proper `resultingUnit`  and the Sets Handicaps markets will have handicap points removed from the team names and offered as spread markets.
+New tennis events will start using proper `resultingUnit` and the Sets Handicaps markets will have handicap points removed from the team names and offered as spread markets.
 
 
 In addition to the above changes to convey the 'resultingUnit' for each market, in Live we have historically offered all markets in Period 0 with the description of the Period in the Team Names. 
-This has changed to use the  period  `number` of two events (one for each `resultingUnit`), see Example 2. 
+This has changed to use the period `number` of two events (one for each `resultingUnit`), see Example 2. 
 The descriptions for Tennis Periods can be found with this call `/v1/periods?sportId=33`.
 
- 
 
 ##### Example 1. Prematch Fixtures 
 
 <details>
-    <summary>Old fixtures snipet</summary>
+    <summary>Old fixtures snippet</summary>
 
  ```json
   
@@ -80,7 +79,7 @@ The descriptions for Tennis Periods can be found with this call `/v1/periods?spo
 </details>
  
 <details>
-    <summary>Old odds snipet</summary>
+    <summary>Old odds snippet</summary>
 
  ```json
  {
@@ -224,7 +223,7 @@ The descriptions for Tennis Periods can be found with this call `/v1/periods?spo
 New way shows the match using the new structure where the `resultingUnit` are explicit:
 
 <details>
-    <summary>New fixtures snipet</summary>
+    <summary>New fixtures snippet</summary>
 
  ```json
 {
@@ -271,7 +270,7 @@ New way shows the match using the new structure where the `resultingUnit` are ex
 </details>
 
 <details>
-    <summary>New odds snipet</summary>
+    <summary>New odds snippet</summary>
 
  ```json
  {
