@@ -3,6 +3,319 @@
                    
  #  **API Changelog**
 
+## November 18, 2022 - Lines API 
+
+Historically we have offered Soccer Extra Time markets as distinct events with names like: “France (To Advance)”, “England (ET ONLY)”, “Brazil (PEN)”, “China (1st TEN PEN)”, “Spain (To Win Final)”. All of these markets are now offered as Periods of the [parent event live event](FAQ.md#how-to-find-associated-events). 
+
+Special Note: Goals and Red Cards occurring in Extra Time are only returned in Period 3!
+
+- Period 3 is Extra Time
+- Period 6 is Penalty Shootout
+- Period 7 1st Ten Shootout Pen
+- Period 8 is To Qualify 
+- Period 39 is To Win Final 
+
+Consumers can expect to see Spread, Moneyline, Total and Team Totals priced in Period 3. Only Moneyline in Periods 6, 8, 39. Only Total in Period 7.
+
+
+Sample Responses:
+<details>
+    <summary> Get Fixtures </summary>
+
+```json	
+{
+    "sportId": 29,
+    "last": 442452738,
+    "league": [
+        {
+            "id": 218153,
+            "name": "Zanzibar - Mapinduzi Cup",
+            "events": [
+                {
+                    "id": 1563271322,
+                    "starts": "2022-11-17T13:30:00Z",
+                    "home": "TeamA",
+                    "away": "TeamB",
+                    "rotNum": "99552",
+                    "liveStatus": 2,
+                    "status": "O",
+                    "parlayRestriction": 2,
+                    "altTeaser": false,
+                    "resultingUnit": "Regular",
+                    "version": 442452541
+                },
+                {
+                    "id": 1563271334,
+                    "starts": "2022-11-17T13:30:00Z",
+                    "home": "TeamA",
+                    "away": "TeamB",
+                    "rotNum": "99556",
+                    "liveStatus": 1,
+                    "status": "O",
+                    "parlayRestriction": 1,
+                    "parentId": 1563271322,
+                    "altTeaser": false,
+                    "resultingUnit": "Regular",
+                    "version": 442452738
+                }
+            ]
+        }
+    ]
+}
+	
+```
+	
+</details>
+<details>
+<summary>  Get In-Running </summary>
+	
+```json 
+{
+    "sports": [
+        {
+            "id": 29,
+            "leagues": [
+                    {
+                    "id": 218153,
+                    "events": [
+                        {
+                            "id": 1563271334,
+                            "state": 3,
+                            "elapsed": 23
+                        }
+                                ]
+                    }
+                        ]
+        }
+            ]
+}
+	
+```
+	
+</details>
+<details>
+<summary>  Get Odds</summary>
+	
+```json 	
+{
+    "sportId": 29,
+    "last": 1912670245,
+    "leagues": [
+        {
+            "id": 218153,
+            "events": [
+                {
+                    "id": 1563271334,
+                    "awayScore": 1.0,
+                    "homeScore": 1.0,
+                    "awayRedCards": 1,
+                    "homeRedCards": 0,
+                    "periods": [
+                        {
+                            "lineId": 1912670188,
+                            "number": 8,
+                            "cutoff": "2022-11-17T17:45:51.367Z",
+                            "maxMoneyline": 100.0,
+                            "status": 1,
+                            "moneylineUpdatedAt": "2022-11-17T14:34:49.527Z",
+                            "moneyline": {
+                                "home": -322.0,
+                                "away": 212.0
+                            }
+                        },
+                        {
+                            "lineId": 1912670213,
+                            "number": 3,
+                            "cutoff": "2022-11-17T17:46:01.913Z",
+                            "maxSpread": 100.0,
+                            "maxMoneyline": 100.0,
+                            "maxTotal": 100.0,
+                            "status": 1,
+                            "spreadUpdatedAt": "2022-11-17T14:34:51.603Z",
+                            "moneylineUpdatedAt": "2022-11-17T14:34:51.603Z",
+                            "totalUpdatedAt": "2022-11-17T14:34:51.603Z",
+                            "spreads": [
+                                {
+                                    "hdp": -0.25,
+                                    "home": -127.0,
+                                    "away": -109.0
+                                },
+                                {
+                                    "altLineId": 30710204111,
+                                    "hdp": -1.0,
+                                    "home": 404.0,
+                                    "away": -823.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204112,
+                                    "hdp": -0.75,
+                                    "home": 195.0,
+                                    "away": -306.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204113,
+                                    "hdp": -0.5,
+                                    "home": 129.0,
+                                    "away": -185.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204114,
+                                    "hdp": 0.0,
+                                    "home": -407.0,
+                                    "away": 250.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204115,
+                                    "hdp": 0.25,
+                                    "home": -724.0,
+                                    "away": 371.0,
+                                    "max": 100.0
+                                }
+                            ],
+                            "moneyline": {
+                                "home": 130.0,
+                                "away": 497.0,
+                                "draw": -109.0
+                            },
+                            "totals": [
+                                {
+                                    "points": 0.75,
+                                    "over": -115.0,
+                                    "under": -121.0
+                                },
+                                {
+                                    "altLineId": 30710204123,
+                                    "points": 0.5,
+                                    "over": -170.0,
+                                    "under": 119.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204124,
+                                    "points": 1.0,
+                                    "over": 157.0,
+                                    "under": -231.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204125,
+                                    "points": 1.25,
+                                    "over": 218.0,
+                                    "under": -350.0,
+                                    "max": 100.0
+                                },
+                                {
+                                    "altLineId": 30710204126,
+                                    "points": 1.5,
+                                    "over": 276.0,
+                                    "under": -477.0,
+                                    "max": 100.0
+                                }
+                            ],
+                            "homeScore": 0.0,
+                            "awayScore": 0.0,
+                            "awayRedCards": 1,
+                            "homeRedCards": 0
+                        },
+                        {
+                            "lineId": 1912670245,
+                            "number": 0,
+                            "cutoff": "2022-11-17T17:45:41.93Z",
+                            "maxSpread": 250.0,
+                            "maxMoneyline": 125.0,
+                            "maxTotal": 250.0,
+                            "maxTeamTotal": 100.0,
+                            "status": 1,
+                            "spreadUpdatedAt": "2022-11-17T14:34:53.463Z",
+                            "moneylineUpdatedAt": "2022-11-17T14:34:53.463Z",
+                            "totalUpdatedAt": "2022-11-17T14:34:53.463Z",
+                            "teamTotalUpdatedAt": "2022-11-17T14:34:53.463Z",
+                            "spreads": [
+                                {
+                                    "hdp": -0.25,
+                                    "home": 106.0,
+                                    "away": -145.0
+                                },
+                                {
+                                    "altLineId": 30710204552,
+                                    "hdp": -0.75,
+                                    "home": 287.0,
+                                    "away": -487.0,
+                                    "max": 250.0
+                                },
+                                {
+                                    "altLineId": 30710204553,
+                                    "hdp": -0.5,
+                                    "home": 183.0,
+                                    "away": -271.0,
+                                    "max": 250.0
+                                },
+                                {
+                                    "altLineId": 30710204554,
+                                    "hdp": 0.0,
+                                    "home": -488.0,
+                                    "away": 294.0,
+                                    "max": 250.0
+                                }
+                            ],
+                            "moneyline": {
+                                "home": 185.0,
+                                "away": 725.0,
+                                "draw": -181.0
+                            },
+                            "totals": [
+                                {
+                                    "points": 2.5,
+                                    "over": 113.0,
+                                    "under": -155.0
+                                },
+                                {
+                                    "altLineId": 30710204564,
+                                    "points": 2.75,
+                                    "over": 173.0,
+                                    "under": -254.0,
+                                    "max": 250.0
+                                },
+                                {
+                                    "altLineId": 30710204565,
+                                    "points": 3.0,
+                                    "over": 369.0,
+                                    "under": -693.0,
+                                    "max": 250.0
+                                }
+                            ],
+                            "teamTotal": {
+                                "home": {
+                                    "points": 1.5,
+                                    "over": 157.0,
+                                    "under": -222.0
+                                },
+                                "away": {
+                                    "points": 1.5,
+                                    "over": 494.0,
+                                    "under": -973.0
+                                }
+                            },
+                            "homeScore": 1.0,
+                            "awayScore": 1.0,
+                            "awayRedCards": 1,
+                            "homeRedCards": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+	
+```
+	
+</details>
+
 ## October 7, 2022  - Lines API 
 
 #### 1. <span style="background-color:green">DEPRECATED</span> -  Properties team1ScoreSets/team2ScoreSets are deprecated.
