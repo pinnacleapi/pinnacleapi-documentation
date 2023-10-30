@@ -68,15 +68,24 @@ All place bet requests support deduplication.
 
 ## API Reference
 
-**[Pinnacle API Open API Specification](https://github.com/pinnacleapi/OpenAPI-Specification)** is hosted on GitHub.
+##### Customer API
 
-The API reference documentation:
+[v1](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/openapi-specification/master/customerapi-oas.yaml&nocors) - Current
 
-**[Lines API](https://pinnacleapi.github.io/linesapi)**
+##### Lines API
 
-**[Bets API](https://pinnacleapi.github.io/betsapi)**
+ **[v2](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/openapi-specification/master/linesapi-oas.yaml&nocors)** - Current
 
-**[Customer API](https://pinnacleapi.github.io/customerapi)**
+##### Bets API
+
+**[v3](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/openapi-specification/master/betsapi-oas.yaml&nocors)** - Deprecated
+
+**[v4](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/openapi-specification/master/betsapi.v4-oas.yaml&nocors)** - Current
+
+ 
+ 
+
+
 
 
 
