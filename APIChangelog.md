@@ -2,7 +2,12 @@
 
                    
  #  **API Changelog**
+ 
 
+## April 19, 2024 - Lines API 
+
+1. FEATURE - Documented property `max` in the /odds/special  response. This property exposes contestant specific limits.
+   
 ## November 18, 2022 - Lines API 
 
 Historically we have offered Soccer Extra Time markets as distinct events with names like: “France (To Advance)”, “England (ET ONLY)”, “Brazil (PEN)”, “China (1st TEN PEN)”, “Spain (To Win Final)”. All of these markets are now offered as Periods of the [parent event live event](FAQ.md#how-to-find-associated-events). 
