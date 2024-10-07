@@ -3,6 +3,8 @@
                    
  #  **API Changelog**
  
+## October 7, 2024 - Lines API 
+1. DEPRECATED -`/v1/inrunning` endpoint has been deprecated and this feature no longer supported.
 
 ## April 19, 2024 - Lines API 
 
