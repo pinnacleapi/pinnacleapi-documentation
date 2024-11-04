@@ -2,7 +2,10 @@
 
                    
  #  **API Changelog**
- 
+
+## November 4, 2024 - Customer API 
+1. DEPRECATED -`/v1/translations` endpoint has been deprecated and this feature no longer supported.
+
 ## October 7, 2024 - Lines API 
 1. DEPRECATED -`/v1/inrunning` endpoint has been deprecated and this feature no longer supported.
 
