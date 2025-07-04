@@ -129,10 +129,6 @@ Examples of snapshot calls that are counted towards the same sport-endpoint call
 * /v1/fixtures?sportid=29&eventIds=1550526772,1550667755&currencycode=EUR
 
  
-#### R Library
-Please use the [pinnacle.API](https://cran.r-project.org/web/packages/pinnacle.API/index.html) package available on CRAN.  (install.packages(“pinnacle.API”))
-The source code can be found [here](https://github.com/marcoblume/pinnacle.API).
-
 
 
 # More ...
@@ -144,11 +140,6 @@ The source code can be found [here](https://github.com/marcoblume/pinnacle.API).
 [FAQ](FAQ.md)
 
 [Fair Use Policy](FairUsePolicy.md)
-
-# API Status
-You can follow [pinnacle status page](https://status.pinnacle.com/) and subscribe to get the notifications on API status. Notifications will be sent from noreply@mg.pinnacle.com, make sure you check your junk inbox.
-
-We are using Cloudflare as content delivery provider for the API, you can follow their status [here](https://www.cloudflarestatus.com/).
 
 
 # Disclaimer
