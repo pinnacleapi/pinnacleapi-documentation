@@ -6,12 +6,8 @@
 Pinnacle API is a RESTful service for betting all bet types on all sports. 
 ```
 api.pinnacle.com
-```
-
-
-Please note that in order to access Pinnacle API you must contact [Pinnacle Solution](
-https://www.pinnaclesolution.com/en/contact-us) for the approval.
-
+``` 
+Access to Pinnacle API suite has been closed for the general public since July 23rd, 2025. We offer bespoke data services for select high value bettors & commercial partnerships. We also support academics and pregame handicapping projects. To apply for access please write a short description of your use case to api@pinnacle.com.  Our team will get back to you with options.
 
 #### Authentication 
 
@@ -84,70 +80,52 @@ All place bet requests support deduplication.
 
  
  
-### Rules and Rate Limits
+### Rules 
  
-1. Delta and snapshot calls are supported in `/fixtures`, `/fixtures/special` , `/odds` and `/odds/special`  endpoints.  Delta calls return changes since the provided  `since` value. For delta calls `since` parameter must not be set to 0 or 1, it must be always set with the `last` property value of the previous call response. Snapshot calls return the current state,  `since` parameter must not be provided for snapshot calls.
+1. Delta and snapshot calls are supported in `/fixtures`, `/fixtures/special` , `/odds` and `/odds/special`  endpoints.  Delta calls return changes since the provided  `since` value. For delta calls, `since` parameter must not be set to 0 or 1, it must always be the value of the  `last` property from the previous response. Snapshot calls return the current state,  `since` parameter must not be provided for snapshot calls.
 
-2. Always first issue a snapshot call and continue with the delta calls. This would result in a faster response time and a smaller response payload. As a result, the client will   get the odds/fixtures updates faster. 
+2. Always issue a snapshot call first, then proceed with delta calls. This yields faster response times and smaller payloads, so your client will receive odds and fixture updates more quickly.
 
-3. Client must not call `/odds` or `/fixture` endpoint for each sport league or fixture in the loop.  If the client is interested in certain leagues only,  `leagueIds` parameter must be set with all the league identifiers. 
- Same for the `eventIds` parameter, the client should use it only if interested in specific events in which case all event identifiers must be provided in the same call. 
+3. The client must not call the `/odds` or `/fixture` eendpoints in a loop for each sport, league, or fixture. If you’re interested in certain leagues only, include all their IDs in the `leagueIds` pparameter in a single call. Likewise, if you need specific events, include all their IDs in the  `eventIds` parameter together.
+
+4. For the `/sports` call: requests must be limited to once every 60 minutes. The list of sports rarely changes, and the “active events” count is obsolete functionality that will eventually be removed.
+
+5. The client must not call the `/line` endpoint in a loop. This endpoint exists solely to check a price prior to placing a bet.
+
+6. IP Restrictions: Access to the entire API is restricted to a maximum of 2 distinct IP addresses per client.
+
+#### Rate Limiting
+
+All API endpoints that expose odds data are subject to strict rate limiting:
+
+/v1/odds
+
+/v1/odds/special
+
+/v1/odds/parlay
+
+/v2/odds
+
+/v1/line
+
+/v1/line/special
+
+/v1/line/parlay
+
+ 
+**Request Rate Limit**: 1 request per 2 minutes, per endpoint, per sportId.
+
+Requests exceeding the allowed rate will result in 429 HTTP error:
 
 
-4. The following limitations must be observed for `/sports` call:
--  Requests made for the `/sports`  must be restricted to once every 60 minute. List of sports does not change often. The count of active events is obsolete functionality, that will eventually be decommissioned.  
-
-
-5. The following limitations must be observed per sport:
-- Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 120 seconds, regardless of the `leagueIds`, `eventIds` or `islive` parameters.
-- Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 120 seconds, regardless of the `leagueIds`, `eventIds` or `islive` parameters.
-- Calls to `/leagues` must be restricted to once every 60 minutes.
-
-6. Client must not call `/line` endpoint in the loop. The purpose of this endpoint is to check the price prior to the bet placing.
-
-
-
-
-#### Rate Limits
-
-
-To enforce the [Fair Use Policy](FairUsePolicy.md#rules) and ensure stable service to all the clients we have API rate limits in place, a number of API calls clients can make within a given time period.
-
-If the limit is exceeded, the client may get the error response HTTP status code `429`, with HTTP header `Retry-After` that specifies after how many seconds the client can retry.
-
-Example:
-
-```
+``` json
 HTTP/1.1 429 Too Many Requests
 Content-Type: application/json
-Content-Length: 240
-Retry-After: 60
- 
 {
-"code": "TOO_MANY_REQUESTS",
-"message": "Too many snapshot requests. For more details see https://github.com/pinnacleapi/pinnacleapi-documentation#rate-limits
+  "code": "TOO_MANY_REQUESTS",
+  "message": "Notice of Excessive Request Activity"
 }
-
 ```
-
-
-
-`Lines API` snapshot calls are limited, up to 1 call per minute per sport per endpoint. Following endpoints support snapshots:
-
-* /fixtures
-* /fixtures/special 
-* /odds
-* /odds/special 
-
-
-Examples of snapshot calls that are counted towards the same sport-endpoint call rate counter:
-
-* /v1/fixtures?sportid=29 
-* /v1/fixtures?sportid=29&islive=1 
-* /v1/fixtures?sportid=29&leagueIds=1980,5487,2627
-* /v1/fixtures?sportid=29&eventIds=1550526772,1550667755&currencycode=EUR
-
- 
 
 
 # More ...
