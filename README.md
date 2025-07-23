@@ -94,7 +94,7 @@ All place bet requests support deduplication.
 
 6. IP Restrictions: Access to the entire API is restricted to a maximum of 2 distinct IP addresses per client.
 
-#### Rate Limiting
+### Rate Limiting
 
 All API endpoints that expose odds data are subject to strict rate limiting:
 
@@ -118,7 +118,8 @@ All API endpoints that expose odds data are subject to strict rate limiting:
 Requests exceeding the allowed rate will result in 429 HTTP error:
 
 
-``` json
+``` http
+
 HTTP/1.1 429 Too Many Requests
 Content-Type: application/json
 {
