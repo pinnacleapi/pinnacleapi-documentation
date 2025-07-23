@@ -3,6 +3,10 @@
                    
  #  **API Changelog**
 
+
+## July 23, 2025 
+1.  Rate limiting rules are updated.
+
 ## November 4, 2024 - Customer API 
 1. DEPRECATED -`/v1/translations` endpoint has been deprecated and this feature no longer supported.
 

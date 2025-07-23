@@ -84,7 +84,26 @@ All place bet requests support deduplication.
 
  
  
+### Rules and Rate Limits
+ 
+1. Delta and snapshot calls are supported in `/fixtures`, `/fixtures/special` , `/odds` and `/odds/special`  endpoints.  Delta calls return changes since the provided  `since` value. For delta calls `since` parameter must not be set to 0 or 1, it must be always set with the `last` property value of the previous call response. Snapshot calls return the current state,  `since` parameter must not be provided for snapshot calls.
 
+2. Always first issue a snapshot call and continue with the delta calls. This would result in a faster response time and a smaller response payload. As a result, the client will   get the odds/fixtures updates faster. 
+
+3. Client must not call `/odds` or `/fixture` endpoint for each sport league or fixture in the loop.  If the client is interested in certain leagues only,  `leagueIds` parameter must be set with all the league identifiers. 
+ Same for the `eventIds` parameter, the client should use it only if interested in specific events in which case all event identifiers must be provided in the same call. 
+
+
+4. The following limitations must be observed for `/sports` call:
+-  Requests made for the `/sports`  must be restricted to once every 60 minute. List of sports does not change often. The count of active events is obsolete functionality, that will eventually be decommissioned.  
+
+
+5. The following limitations must be observed per sport:
+- Snapshot call to `/fixtures` and `/odds` endpoints must be restricted to once every 120 seconds, regardless of the `leagueIds`, `eventIds` or `islive` parameters.
+- Delta calls to  `/fixtures` and `/odds` endpoints must be restricted to once every 120 seconds, regardless of the `leagueIds`, `eventIds` or `islive` parameters.
+- Calls to `/leagues` must be restricted to once every 60 minutes.
+
+6. Client must not call `/line` endpoint in the loop. The purpose of this endpoint is to check the price prior to the bet placing.
 
 
 
