@@ -4,6 +4,16 @@
  #  **API Changelog**
 
 
+
+## October 13, 2025 
+1. FEATURE: New /v2/odds endpoint with the support for team total alternate lines. Only the team total data mode is changed; the rest of the response model remains unchanged.
+
+2. DEPRECATED: /v1/odds endpoint. Please migrate to /v2/odds.
+
+3. FEATURE: New Bets API v4. Key change: place-bet responses no longer return full bet details.
+
+4. DEPRECATED: Bets API v3. Please migrate to v4.
+
 ## July 23, 2025 
 1.  Rate limiting rules are updated.
 
