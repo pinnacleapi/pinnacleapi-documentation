@@ -98,25 +98,23 @@ All place bet requests support deduplication.
 
 All API endpoints that expose odds data are subject to strict rate limiting:
 
-/v1/odds
+ - /v1/odds
 
-/v1/odds/special
+ - /v1/odds/special
 
-/v1/odds/parlay
+ - /v1/odds/parlay
 
-/v2/odds
+ - /v2/odds
 
-/v1/line
+ - /v1/line
 
-/v1/line/special
+ - /v1/line/special
 
-/v1/line/parlay
+ - /v1/line/parlay
 
  
 **Request Rate Limit**: 1 request per 2 minutes, per endpoint, per sportId.
-
 Requests exceeding the allowed rate will result in 429 HTTP error:
-
 
 ``` http
 
@@ -126,6 +124,22 @@ Content-Type: application/json
   "code": "TOO_MANY_REQUESTS",
   "message": "Notice of Excessive Request Activity"
 }
+```
+
+**Example**  
+```  
+2025-10-14T18:00:00Z  /v1/odds?sportId=29 200 OK
+2025-10-14T18:00:01Z  /v1/odds?sportId=15 200 OK
+2025-10-14T18:00:02Z  /v1/odds?sportId=3  200 OK
+2025-10-14T18:01:02Z  /v1/odds?sportId=29&since=3301748841 429 Too Many Requests
+...
+2025-10-14T18:02:01Z  /v1/odds?sportId=29&since=3301748841 200 OK
+2025-10-14T18:02:02Z  /v1/odds?sportId=15&since=3301749826 200 OK
+2025-10-14T18:02:03Z  /v1/odds?sportId=3&since=33017511801 200 OK
+...
+2025-10-14T18:04:02Z  /v1/odds?sportId=29&since=3301748841 200 OK
+2025-10-14T18:04:03Z  /v1/odds?sportId=15&leagueIds=4347&leagueIds=889&since=3301742786 200 OK
+2025-10-14T18:04:04Z  /v1/odds?sportId=3&since=33017511801 200 OK
 ```
 
 
