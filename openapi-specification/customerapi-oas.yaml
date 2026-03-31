@@ -1,0 +1,106 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Pinnacle - Customer API Reference
+  description:  |
+    
+    # Authentication 
+    
+    Please note that API has restriction that client password can be maximum up 10 characters long.
+
+    API uses HTTP Basic access authentication. You need to send Authorization HTTP Request header:  
+    
+    `Authorization: Basic <Base64 value of UTF-8 encoded "username:password">`
+    
+    Example:
+    
+    `Authorization: Basic U03MyOT23YbzMDc6d3c3O1DQ1`
+    
+  x-logo:
+    url: 'https://avatars2.githubusercontent.com/u/31601407?s=400&u=f3c6e1cfc8a26665e4a4df6d8da4a7ee527aeceb&v=4'
+host: api.pinnacle.com
+schemes:
+  - https
+security:
+  - basicAuth: []
+paths:
+  /v1/client/balance:
+    get:
+      summary: Get Client Balance - v1
+      description: Returns current client balance.
+      operationId: Client_Balance_V1_Get
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+        - application/xml
+        - text/xml
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClientBalanceResponse'
+        '400':
+          description: BadRequest
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: InternalServerError
+          schema:
+            $ref: '#/definitions/ExtendedErrorResponse'
+      deprecated: true
+securityDefinitions:
+  basicAuth:
+    type: basic
+definitions:
+  ErrorResponse:
+    type: object
+    properties:
+      code:
+        type: string
+        description: Identifier representing the type of error that occurred.
+      message:
+        type: string
+        description: Description of the error.
+    description: Contains details of an error that was encountered.
+  ExtendedErrorResponse:
+    type: object
+    properties:
+      ref:
+        type: string
+      code:
+        type: string
+      message:
+        type: string
+  ClientBalanceResponse:
+    description: Client Balance Details
+    type: object
+    properties:
+      availableBalance:
+        format: double
+        description: Amount available for betting.
+        type: number
+      outstandingTransactions:
+        format: double
+        description: Sum of not yet settled bet amounts.
+        type: number
+      givenCredit:
+        format: double
+        description: Client’s credit.
+        type: number
+      currency:
+        description: Client’s currency code.
+        type: string
+    required: 
+      - availableBalance
+      - outstandingTransactions
+      - givenCredit
+      - currency

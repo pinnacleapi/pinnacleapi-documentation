@@ -95,7 +95,7 @@ A few facts that can help:
 
 There is a pre-game parent event id 834342247, that has associated live event id 837721686, but also 2 corner events in different league - one live event (837721684), while the other one for pre-game (837721615)
 
-Introduction of `parentid` eliminates a need for rotation numbers. 
+Introduction of `parentId` eliminates a need for rotation numbers.
 Please note that in the next version of `/fixtures`, the `rotNum` property will be decommissioned.
 
 
@@ -124,7 +124,7 @@ Special has `event` object that specifies the details of the associated event th
 
 ### When is the market open for betting? 
 
-A straight market ( `moneyline` , `spreads`, `totals`,  `teamtotal` ) in a period is open for betting if in [Get Odds](https://pinnacleapi.github.io/linesapi#tag/Odds) response all these is true:
+response all these are true:
 1. Period `status` = 1
 2. Market is priced.
 3. Period has `cutoff` is in the future.

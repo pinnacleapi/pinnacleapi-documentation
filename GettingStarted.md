@@ -2,21 +2,15 @@
 
 # Getting Started
 
-##### Step 1 - Get Approval to Access the API
-
-Please note that Pinnacle API is not available to all customers. To request the access please contact [Pinnacle Solution](
-https://www.pinnaclesolution.com/en/contact-us).
-
-
-##### Step 2 - Get a List of Offered Sports and Leagues
+##### Step 1 - Get a List of Offered Sports and Leagues
 
 You would need to get the list of sports from the Get Sports operation. If you are interested in particular leagues, you can get all sports leagues by calling the  Get Leagues operation.
 
-##### Step 3 - Place Bet 
+##### Step 2 - Place Bet 
 
 To place a bet, please check the below section [How to place a bet](#How_to_Place_a_Bet).
 
-##### Step 4 - Get Bets
+##### Step 3 - Get Bets
 
 To check the status of the placed bet, you need to call Get Bets operation. The recommended way is to use `betIds` query parameter.
 
@@ -93,7 +87,7 @@ Table shows how to do mapping of Get Odds operation response to Place Bet and Ge
 
 **IMPORTANT**: 
 Make sure you use both the `lineId` and `altLineId` from the Get Line or Get Odds response when placing a bet.
-If you the price was for alternate line and you omit to set the `altLineId` parameter in the place bet request, the bet will be placed on the main line.
+If the price was for an alternate line and you omit to set the `altLineId` parameter in the place bet request, the bet will be placed on the main line.
 
 
 
@@ -116,7 +110,7 @@ For each event and bet type you want to bet on, construct a Leg object for Get P
 
 ##### Step 4 – Call Place Parlay Bet
 
-Construct a list of legs using lineId values from Get Parlay Lines response and specify roundRobbinOptions out of those returned in Get Parlay Lines response.
+Construct a list of legs using lineId values from Get Parlay Lines response and specify roundRobinOptions out of those returned in Get Parlay Lines response.
 
 
 #### Teaser Bet

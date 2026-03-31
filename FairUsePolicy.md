@@ -16,8 +16,7 @@ We may at any time, and at our sole discretion, modify this Fair Use Policy, wit
 
 ### Fair usage
 
-Fair usage
-The API is provided to clients on a case-by-case basis. The API usage must be proportionate to client use case as determined by Pinnacle.
+The API is provided to clients on a case-by-case basis.
 Unless explicitly agreed in writing by Pinnacle, the commercial usage of the API will lead to the permanent suspension of your access.
 
 You will not attempt, nor encourage others to:

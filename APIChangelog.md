@@ -19,12 +19,12 @@ Only the team total data mode has changed; all other aspects of the response mod
 1.  Rate limiting rules are updated.
 
 ## November 4, 2024 - Customer API 
-1. DEPRECATED -`/v1/translations` endpoint has been deprecated and this feature no longer supported.
+this feature is no longer supported.
 
-## October 7, 2024 - Lines API 
-1. DEPRECATED -`/v1/inrunning` endpoint has been deprecated and this feature no longer supported.
+## October 7, 2024
+this feature is no longer supported.
 
-## April 19, 2024 - Lines API 
+## April 19, 2024
 
 1. FEATURE - Documented property `max` in the /odds/special  response. This property exposes contestant specific limits.
    
@@ -345,9 +345,9 @@ Sample Responses:
 
 #### 1. <span style="background-color:green">DEPRECATED</span> -  Properties team1ScoreSets/team2ScoreSets are deprecated.
 
-As a part of the tennis changes from September 12, 2022, properties `team1ScoreSets` and`team2ScoreSets` in `/fixtures/settled` endpoint are deprecated. 
+properties `team1ScoreSets` and `team2ScoreSets`
 
-The score for tennis matches works the same as for other sports, properties `team1Score` and`team2Score` show the score depending on the `resultingUnit` (`Games` or `Sets`) coming from the `/fixtures` endpoint.
+`team1Score` and `team2Score`
 
 
 ## September  12, 2022  - Lines API 
@@ -806,7 +806,7 @@ New way shows the match using the new structure where the `resultingUnit` are ex
 
 
 <details>
-    <summary>Old fixtures snipet (with `Regular` `resultingUnit` and period descriptions in `home" and `away`)</summary>
+    Old fixtures snippet (with `Regular` `resultingUnit` and period descriptions in `home" and `away`)
 
  ```json
 {
@@ -928,7 +928,7 @@ New way shows the match using the new structure where the `resultingUnit` are ex
 
 
 <details>
-    <summary>Old odds snipet</summary>
+    Old odds snippet
 
  ```json
  {
@@ -1064,7 +1064,7 @@ New way shows the match using the new structure where the `resultingUnit` are ex
 
 New way shows the match using the new structure where the `resultingUnit` are explicit and odds are offered on multiple periods ( not just period 0):
 <details>
-    <summary>New fixtures snipet</summary>
+    New fixtures snippet
 
 ```json
 {
@@ -1111,7 +1111,7 @@ New way shows the match using the new structure where the `resultingUnit` are ex
 
 
 <details>
-    <summary>New odds snipet</summary>
+    New odds snippet
 
 ```json
 {
@@ -1346,7 +1346,7 @@ New properties are added to the straight and the parlay bets to support Asian ha
 ## December 18, 2018 - Lines API 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - New property `liveStatus` in the `/v1/fixtures/special` response. 
-Pinnacle will start offering live betting on specials soon, firstly on Esports. This property was introduce so that clients can differentiate live from pregame specials. Please note that live delay will be applied to betting on live specials. 
+This property was introduced so that
 
 #### 2. <span style="background-color:green">IMPROVEMENT</span> -  All live events must have `parentId`.
 When `parentId` was introduced we could not guarantee that all live events would have `parentId` set. In time we were able to consolidate the data and be able to guarantee that.
@@ -1360,7 +1360,7 @@ When `parentId` was introduced we could not guarantee that all live events would
 ## October 17, 2018 - Lines API 
 
 ##### 1. <span style="background-color:green">FEATURE</span>  - Added `handicap` parameter to  `line/special`.
-As contestant's handicap is a mutable property,  it may happened that `line/special` returns `status`:`SUCCESS`, but with the different `handicap` from the one that client had at the moment of calling the  `line/special`. Now one can specify `handicap` parameter in the request and if the contestant's handicap changed, it would return `status`:`NOT_EXISTS`. This way  `line/special` is more aligned to how `/line` works.
+it may happen that
 
 
 ## July 17, 2018 - Bets API 
@@ -1371,7 +1371,7 @@ As contestant's handicap is a mutable property,  it may happened that `line/spec
 
 ## June 7, 2018 - Bets API 
 
-##### 1# <span style="background-color:green">FEATURE</span>  - New properties `price` and `finalPrice` for teaser bets  in the `/bets` response.
+##### 1. <span
 The `price` will be populated for all teaser bets and will be the original price on the time of placement.
 
 The `finalPrice` will be populated only for `WON` bets and will indicate the price of bet resulting. It might be different from original price if one or more legs were pushed or canceled.
@@ -1471,9 +1471,9 @@ This would allow clients to speed up the decision-making process as there is no 
 
 There is a pre-game parent event id 834342247, that has associated live event id 837721686, but also 2 corner events in different leagues, one for live betting (837721684), while the other one is for pre-game (837721615)
 
-Introduction of parentid eliminates the need for rotation numbers. 
+Introduction of parentId eliminates the need for rotation numbers.
 
-Please note that in the next version of `/fixtures`, the `rotNum` property will be decomissioned.
+will be decommissioned.
 
 
 ## January 4, 2018 - Lines API 
