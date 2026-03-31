@@ -66,17 +66,15 @@ All place bet requests support deduplication.
 
 ##### Customer API
 
-[v1](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/openapi-specification/master/customerapi-oas.yaml&nocors) - Current
+[v1](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/refs/heads/master/openapi-specification/customerapi-oas.yaml&nocors) - Current
 
 ##### Lines API
 
- **[v2](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/openapi-specification/master/linesapi-oas.yaml&nocors)** - Current
+**[v2](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/refs/heads/master/openapi-specification/linesapi-oas.yaml&nocors)** - Current
 
 ##### Bets API
 
-**[v3](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/openapi-specification/master/betsapi-oas.yaml&nocors)** - Deprecated
-
-**[v4](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/openapi-specification/master/betsapi.v4-oas.yaml&nocors)** - Current
+**[v4](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/pinnacleapi/pinnacleapi-documentation/refs/heads/master/openapi-specification/betsapi.v4-oas.yaml&nocors)** - Current
 
  
  
