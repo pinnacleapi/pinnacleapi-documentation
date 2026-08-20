@@ -410,6 +410,7 @@ paths:
       deprecated: false
   /v1/fixtures/settled:
     get:
+      deprecated: true
       tags:
         - Fixtures
       summary: Get Settled Fixtures - v1
@@ -499,6 +500,7 @@ paths:
                 $ref: '#/components/schemas/ExtendedErrorResponse'
   /v1/fixtures/special/settled:
     get:
+      deprecated: true
       tags:
         - Fixtures
       summary: Get Settled Special Fixtures - v1
@@ -585,7 +587,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExtendedErrorResponse'
-      deprecated: false
   /v2/odds:
     get:
       tags:
@@ -3439,4 +3440,4 @@ components:
           type: number
         max:
           format: double
-          description: Maximum bet volume amount per contestant. See [How to calculate max risk from the max volume](https://github.com/pinnacleapi/pinnacleapi-documentation/blob/master/FAQ.md#how-to-calculate-max-risk-from-the-max-volume-limits-in-odds)    
+          description: Maximum bet volume amount per contestant. See [How to calculate max risk from the max volume](https://github.com/pinnacleapi/pinnacleapi-documentation/blob/master/FAQ.md#how-to-calculate-max-risk-from-the-max-volume-limits-in-odds)
