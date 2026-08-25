@@ -2,8 +2,10 @@
 
                    
  #  **API Changelog**
-
-
+## August 25, 2026 
+1. DEPRECATED: /v1/fixtures/settled and /v1/fixtures/special/settled.
+   Both endpoints reach end of life on November 1, 2026 and will stop
+   responding after that date. There is no replacement.
 
 ## October 13, 2025 
 1.  FEATURE: Introduced the /v2/odds endpoint with support for team total alternate lines.
