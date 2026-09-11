@@ -1,4 +1,5 @@
 
+
 openapi: 3.0.1
 info:
   title: Pinnacle - Bets API Reference
@@ -169,93 +170,6 @@ paths:
                          legId: 97e108f9-de39-4c87-96b5-a1c7748a39c1
                          lineId: 1633395088
                          price: -115
-        400:
-          description: BadRequest
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        500:
-          description: InternalServerError
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponseWithErrorRef'
-      x-codegen-request-body-name: request
-  /v4/bets/teaser:
-    post:
-      tags:
-      - Place Bets
-      summary: Place teaser bet.
-      description: |
-
-        Make sure you handle properly the case of an unexpected error as per
-         [How to handle error on placing a bet?](https://github.com/pinnacleapi/pinnacleapi-documentation/blob/master/FAQ.md#how-to-handle-unexpected-error-on-placing-a-bet)
-      operationId: Bets_Teaser
-      requestBody:
-        description: The PlaceTeaser request.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PlaceTeaserBetRequest'
-        required: true
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PlaceTeaserBetResponse'
-              examples:
-                Accepted Bet:
-                    value:
-                      status: ACCEPTED
-                      errorCode: null
-                      betId: 945160306
-                      uniqueRequestId: b2c279bc-f046-48f8-b4e2-cc6dc4c4ae93
-                      price: -110
-                      risk: 10
-                      win: 9.09
-                      validLegs:
-                        - status: VALID
-                          errorCode: null
-                          legId: b1f3de18-a9b6-4c51-b99b-af0e071e7f6f
-                          lineId: 1633999451
-                          points: 3.5
-                        - status: VALID
-                          errorCode: null
-                          legId: 466c1016-4d28-4cfa-b5d8-8c1b11b046d2
-                          lineId: 1634014962
-                          points: -6.5 
-                Bet Processed With An Error:
-                  value:
-                     status: PROCESSED_WITH_ERROR
-                     errorCode: INVALID_LEGS
-                     betId: null
-                     uniqueRequestId: ef76dc6e-73c6-4905-bed2-8c9d408a2bf7
-                     invalidLegs:
-                       - status: PROCESSED_WITH_ERROR
-                         errorCode: LINE_IS_NOT_AVAILABLE
-                         legId: 38460773-aafc-48fd-a939-e0d9ce1b6807
-                     validLegs:
-                       - status: VALID
-                         errorCode: null
-                         legId: 3256398d-3b18-4c2b-b856-20fba8e371ab
-                         lineId: 1634029355
-                         points: 8.5
-                      
         400:
           description: BadRequest
           content:
